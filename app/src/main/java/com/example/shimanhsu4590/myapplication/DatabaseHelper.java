@@ -55,7 +55,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public String searchPass(String uname)
     {
         db = this.getReadableDatabase();
-        String query = "select uname, pass from"+TABLE_NAME;
+        String query = "select uname, pass from "+TABLE_NAME;
         Cursor cursor = db.rawQuery(query , null);
         String a,b;
         b="not found";
