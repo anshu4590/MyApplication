@@ -64,7 +64,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         boolean passwordMatched = false;
         String passwordInDataBase = null;
         cursor.moveToFirst();
-        while (!cursor.isLast()) {
+        while (!cursor.isAfterLast()) {
             Log.e("password123", cursor.getString(cursor.getColumnIndex(COLUMN_PASSWORD)));
             passwordInDataBase =  cursor.getString(cursor.getColumnIndex(COLUMN_PASSWORD));
             if(passwordInDataBase.equals(password)){
