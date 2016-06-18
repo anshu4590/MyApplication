@@ -1,198 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:padding="20dp"
     tools:context="com.example.shimanhsu4590.myapplication.signup">
 
-    <Button
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Signup"
-        android:id="@+id/Bsignupbutton"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="onSignUpClick" />
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Name"
+            android:id="@+id/textView"
+            android:textSize="20dp" />
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:id="@+id/TFname"
+            android:hint="Enter your name." />
 
-    <EditText
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:id="@+id/TFname"
-        android:layout_alignTop="@+id/textView"
-        android:layout_alignLeft="@+id/TFemail"
-        android:layout_alignStart="@+id/TFemail" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="E-mail"
+            android:textSize="20dp" />
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:id="@+id/TFemail"
+            android:hint="Enter your email id."/>
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="User Name"
+            android:textSize="20dp" />
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:id="@+id/TFuserName"
+            android:hint="Enter your name." />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Password"
+            android:id="@+id/textView3"
+            android:textSize="20dp"
+            android:layout_above="@+id/textView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:id="@+id/TFpassword"
+            android:hint="Enter your pasword."/>
+
+    </LinearLayout>
+    <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
     <TextView
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="Name"
-        android:id="@+id/textView"
-        android:textSize="25dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:text="E-mail"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/TFname"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textSize="25dp" />
-
-    <EditText
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:id="@+id/TFemail"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_alignLeft="@+id/Bsignupbutton"
-        android:layout_alignStart="@+id/Bsignupbutton" />
-
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:text="Enter Password"
-        android:id="@+id/textView3"
-        android:textSize="18dp"
-        android:layout_above="@+id/textView4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:text="Re-enter password"
+        android:text="Re-Password"
         android:id="@+id/textView4"
-        android:textSize="18dp"
-        android:layout_above="@+id/section"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:textSize="18dp" />
 
-    <TextView
-        android:layout_width="100dp"
+    <EditText
+        android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:text="Section"
-        android:id="@+id/section"
-        android:textSize="25dp"
-        android:layout_alignTop="@+id/section_1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignBottom="@+id/section_6" />
+        android:id="@+id/TFconfirmPassword"
+        android:hint="Enter your pasword." />
 
-    <CheckBox
-        android:layout_width="wrap_content"
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="sec-1"
-        android:id="@+id/section_1"
-        android:checked="false"
-        android:textSize="25dp"
-        android:layout_above="@+id/checkBox2"
-        android:layout_alignRight="@+id/checkBox2"
-        android:layout_alignEnd="@+id/checkBox2" />
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Section"
+            android:id="@+id/section"
+            android:gravity="center"
+            android:textSize="20dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="sec-4"
-        android:id="@+id/section_4"
-        android:checked="false"
-        android:textSize="25dp"
-        android:layout_above="@+id/section_5"
-        android:layout_toRightOf="@+id/textView6"
-        android:layout_toEndOf="@+id/textView6" />
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="sec-1"
+                android:id="@+id/section_1"
+                android:checked="false"
+                android:textSize="20dp"
+                android:layout_weight="0.5"/>
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="sec-5"
-        android:id="@+id/section_5"
-        android:checked="false"
-        android:textSize="25dp"
-        android:layout_above="@+id/section_6"
-        android:layout_toRightOf="@+id/section"
-        android:layout_toEndOf="@+id/section" />
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="sec-2"
+                android:id="@+id/section_2"
+                android:checked="false"
+                android:textSize="20dp"
+                android:layout_weight="1" />
+        </LinearLayout>
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="sec-6"
-        android:id="@+id/section_6"
-        android:checked="false"
-        android:textSize="25dp"
-        android:layout_above="@+id/Bsignupbutton"
-        android:layout_toRightOf="@+id/section"
-        android:layout_toEndOf="@+id/section" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+        <CheckBox
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="sec-3"
+            android:id="@+id/section_3"
+            android:checked="false"
+            android:textSize="20dp"
+            android:layout_weight="0.5"/>
+        <CheckBox
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="sec-4"
+            android:id="@+id/section_4"
+            android:checked="false"
+            android:textSize="20dp"
+            android:layout_weight="1"/>
+         </LinearLayout>
 
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:text="Username"
-        android:id="@+id/textView6"
-        android:textSize="20dp"
-        android:layout_above="@+id/textView3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+        <CheckBox
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="sec-5"
+            android:id="@+id/section_5"
+            android:checked="false"
+            android:textSize="20dp"
+            android:layout_weight="0.5"/>
+        <CheckBox
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="sec-6"
+            android:id="@+id/section_6"
+            android:checked="false"
+            android:textSize="20dp"
+            android:layout_weight="1"/>
+            </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Signup"
+            android:id="@+id/Bsignupbutton"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="onSignUpClick" />
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sec-3"
-        android:id="@+id/checkBox"
-        android:layout_above="@+id/section_4"
-        android:layout_toRightOf="@+id/textView6"
-        android:layout_toEndOf="@+id/textView6"
-        android:checked="false"
-        android:textSize="25dp" />
+    </LinearLayout>
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sec-2"
-        android:id="@+id/checkBox2"
-        android:checked="false"
-        android:textSize="25dp"
-        android:layout_above="@+id/checkBox"
-        android:layout_alignLeft="@+id/checkBox"
-        android:layout_alignStart="@+id/checkBox" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/TFuname"
-        android:layout_below="@+id/TFemail"
-        android:layout_alignLeft="@+id/Bsignupbutton"
-        android:layout_alignStart="@+id/Bsignupbutton"
-        android:layout_alignRight="@+id/TFemail"
-        android:layout_alignEnd="@+id/TFemail" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/TFpass1"
-        android:layout_below="@+id/TFuname"
-        android:layout_alignLeft="@+id/TFuname"
-        android:layout_alignStart="@+id/TFuname"
-        android:layout_alignRight="@+id/TFuname"
-        android:layout_alignEnd="@+id/TFuname" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/TFpass2"
-        android:layout_above="@+id/section_1"
-        android:layout_alignLeft="@+id/TFpass1"
-        android:layout_alignStart="@+id/TFpass1"
-        android:layout_alignRight="@+id/TFpass1"
-        android:layout_alignEnd="@+id/TFpass1" />
-
-</RelativeLayout>
+</LinearLayout>

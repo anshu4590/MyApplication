@@ -20,7 +20,7 @@ public class Chitkara {
         return this.email;
     }
 
-    public void setUnameame(String unamename) {
+    public void setUname(String uname) {
         this.uname = uname;
     }
 
@@ -34,5 +34,11 @@ public class Chitkara {
 
     public String getPass() {
         return this.pass;
+    }
+
+    @Override
+    public String toString() {
+
+        return "name = "+ name + " email = " + email + " uname = " + uname + " password  = " + pass;
     }
 }

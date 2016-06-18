@@ -1,52 +1,72 @@
 package com.example.shimanhsu4590.myapplication;
 
-        import android.support.v7.app.AppCompatActivity;
-        import android.os.Bundle;
-        import android.view.View;
-        import android.widget.EditText;
-        import android.widget.TextView;
-        import android.widget.Toast;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class signup extends AppCompatActivity {
+    EditText userName;
+    EditText emailId;
+    EditText studentName;
+    EditText password;
+    EditText confirmPassword;
+    DatabaseHelper helper;
+    Chitkara studentInfo;
 
-    DatabaseHelper helper = new DatabaseHelper(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
+        helper = new DatabaseHelper(this);
+        studentName = (EditText) findViewById(R.id.TFname);
+        emailId = (EditText) findViewById(R.id.TFemail);
+        userName = (EditText) findViewById(R.id.TFuserName);
+        password = (EditText) findViewById(R.id.TFpassword);
+        confirmPassword = (EditText) findViewById(R.id.TFconfirmPassword);
     }
 
-    public void onSignUpClick(View v)
-    {
-        if(v.getId() == R.id.Bsignupbutton)
-        {
-            EditText name= (EditText)findViewById(R.id.TFname);
-            EditText email= (EditText)findViewById(R.id.TFemail);
-            EditText uname= (EditText)findViewById(R.id.TFuname);
-            EditText pass1= (EditText)findViewById(R.id.TFpass1);
-            EditText pass2= (EditText)findViewById(R.id.TFpass2);
-            String namestr = name.getText().toString();
-            String emailstr = email.getText().toString();
-            String unamestr = uname.getText().toString();
-            String pass1str = pass1.getText().toString();
-            String pass2str = pass2.getText().toString();
-
-            if (!pass1str.equals(pass2str))
-            {//popup msg
-                Toast pass= Toast.makeText(signup.this ,"passwords don't match" , Toast.LENGTH_SHORT);
-                pass.show();
+    public void onSignUpClick(View v) {
+        if (v.getId() == R.id.Bsignupbutton) {
+            if(!fieldIsEmpty()){
+                Toast.makeText(getApplicationContext(), "Some field are empty", Toast.LENGTH_SHORT).show();
             }
-            else
-            {//insert the details in database
-                Chitkara c= new Chitkara();
-                c.setName(namestr);
-                c.setEmail(emailstr);
-                c.setUnameame(unamestr);
-                c.setPass(pass1str);
-                helper.insertchitkara(c);
-
+            if (matchPassword()) {
+                studentInfo = new Chitkara();
+                studentInfo.setName(studentName.getText().toString());
+                studentInfo.setEmail(emailId.getText().toString());
+                studentInfo.setUname(userName.getText().toString());
+                studentInfo.setPass(password.getText().toString());
+                Log.e("studentInfo",studentInfo.toString() + "\n" + userName.getText().toString());
+                helper.insertStudentInfo(studentInfo);
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(getApplicationContext(), "Password do not Match", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    public boolean matchPassword() {
+        return password.getText().toString().equals(confirmPassword.getText().toString());
+    }
+
+    public boolean fieldIsEmpty() {
+        if (studentName.getText().toString().equals(null))
+            return false;
+        else if (emailId.getText().toString().equals(null))
+            return false;
+        else if (userName.getText().toString().equals(null))
+            return false;
+        else if (password.getText().toString().equals(null))
+            return false;
+        else if (confirmPassword.getText().toString().equals(null))
+            return false;
+        return true;
     }
 
 }

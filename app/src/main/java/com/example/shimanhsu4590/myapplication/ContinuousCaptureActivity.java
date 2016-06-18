@@ -1,6 +1,6 @@
 package com.example.shimanhsu4590.myapplication;
+
 import android.app.Activity;
-import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +25,7 @@ public class ContinuousCaptureActivity extends Activity{
         public void barcodeResult(BarcodeResult result) {
             if (result.getText() != null) {
                 barcodeView.setStatusText(result.getText());
+                Log.e("1234",result.getText());
             }
             //Added preview of scanned barcode
             ImageView imageView = (ImageView) findViewById(R.id.barcodePreview);

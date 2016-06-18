@@ -3,6 +3,7 @@ package com.example.shimanhsu4590.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -10,11 +11,11 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     DatabaseHelper helper;
-    EditText a;
-    EditText b;
+    EditText tvUsername;
+    EditText tvPassword;
     String str;
-    String pass;
     String password;
+    boolean confirmPassword = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         helper = new DatabaseHelper(this);
-        a = (EditText) findViewById(R.id.TFusername);
-        b = (EditText) findViewById(R.id.TFpassword);
+        tvUsername = (EditText) findViewById(R.id.TFusername);
+        tvPassword = (EditText) findViewById(R.id.TFpassword);
 
     }
 
@@ -31,16 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
         switch (v.getId()) {
             case R.id.Blogin:
-                str = a.getText().toString();
-                pass = b.getText().toString();
-                password = helper.searchPass(str);
-                if (pass.equals(password)) {
+                confirmPassword = helper.matchPassword(tvUsername.getText().toString(),tvPassword.getText().toString());
+                Log.e("1334",String.valueOf(confirmPassword));
+                if (confirmPassword) {
                     Intent i = new Intent(MainActivity.this, Section.class);
-                    i.putExtra("Username", str);
+                    i.putExtra("Username",tvUsername.getText().toString());
                     startActivity(i);
                 } else {
-                    Toast temp = Toast.makeText(MainActivity.this, "username and passwords don't match", Toast.LENGTH_SHORT);
-                    temp.show();
+                    Toast.makeText(MainActivity.this, "username and passwords is incorrect", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.Bsignup:
