@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.shimanhsu4590.myapplication.Section">
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="     Select Section"
+        android:id="@+id/sel_sec"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="67dp"
+        android:textSize="25dp" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Section 1"
+        android:id="@+id/sec_1"
+        android:checked="true"
+        android:layout_below="@+id/sel_sec"
+        android:layout_alignLeft="@+id/sec_5"
+        android:layout_alignStart="@+id/sec_5" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Section 2"
+        android:id="@+id/sec_2"
+        android:checked="false"
+        android:layout_below="@+id/sec_1"
+        android:layout_alignLeft="@+id/sec_1"
+        android:layout_alignStart="@+id/sec_1" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Section 3"
+        android:id="@+id/sec_3"
+        android:checked="false"
+        android:layout_below="@+id/sec_2"
+        android:layout_alignLeft="@+id/sec_2"
+        android:layout_alignStart="@+id/sec_2" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Section 4"
+        android:id="@+id/sec_4"
+        android:layout_below="@+id/sec_3"
+        android:layout_alignLeft="@+id/sec_3"
+        android:layout_alignStart="@+id/sec_3"
+        android:checked="false" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Section 5"
+        android:id="@+id/sec_5"
+        android:layout_below="@+id/sec_4"
+        android:layout_centerHorizontal="true"
+        android:checked="false" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Section 6"
+        android:id="@+id/sec_6"
+        android:checked="false"
+        android:layout_below="@+id/sec_5"
+        android:layout_alignLeft="@+id/sec_5"
+        android:layout_alignStart="@+id/sec_5" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        android:id="@+id/done"
+        android:layout_below="@+id/sec_6"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp"
+        android:onClick="NextAct"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="welcome"
+        android:id="@+id/textView5"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/sec_1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/EmptyString"
+        android:id="@+id/TVusername"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
