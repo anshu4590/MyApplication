@@ -38,7 +38,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        String query = "select * from chitkara";
+        String query = "select * from chitkara ";
         Cursor cursor = db.rawQuery(query , null);
         int count = cursor.getCount();
         values.put(COLUMN_ID, count);
@@ -78,7 +78,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-     String query = "DROP TABLE IF EXISTS"+TABLE_NAME;
+     String query = "DROP TABLE IF EXISTS "+TABLE_NAME;
         db.execSQL(query);
         this.onCreate(db);
     }
